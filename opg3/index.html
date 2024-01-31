@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opgave 3</title>
+  </head>
+  <body>
+    <main>
+      <p>Opgave 3</p>
+      <input type="number" id="tal" placeholder="Indtast et tal" />
+      <button id="btn">Tjek tal</button>
+    </main>
+  </body>
+  <script>
+    let nbrOfGuesses = 1;
+    let guessNumber = Math.round(Math.random() * 10) + 1; // Rettet til at generere tal fra 1 til 10
+
+    document.getElementById("btn").addEventListener("click", function () {
+      var tal = parseInt(document.getElementById("tal").value);
+
+      if (tal == guessNumber) {
+        window.alert(
+          `${tal} er rigtigt! Du brugte ${nbrOfGuesses} forsøg. Prøv igen med et nyt tal!`
+        );
+        guessNumber = Math.round(Math.random() * 10) + 1; // Generer et nyt tilfældigt tal
+        nbrOfGuesses = 1; // Nulstil antal gæt
+      } else if (tal > guessNumber) {
+        window.alert("Du har gættet for højt!");
+        nbrOfGuesses++;
+      } else if (tal < guessNumber) {
+        window.alert("Du har gættet for lavt!");
+        nbrOfGuesses++;
+      }
+    });
+  </script>
+</html>
