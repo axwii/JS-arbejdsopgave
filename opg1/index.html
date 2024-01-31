@@ -1,19 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>opgave 1</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <img src="" alt="snaps">
-        <img src="" alt="fanta">
-        <img src="" alt="cola">
-        <img src="" alt="øl">
+      <img id="snaps" src="img/snaps.webp" alt="snaps" />
+      <img id="fanta" src="img/fanta.webp" alt="fanta" />
+      <img id="cola" src="img/cola.webp" alt="cola" />
+      <img id="beer" src="img/ol.jpeg" alt="øl" />
     </main>
-</body>
-<script>
-    addEventListener()
-</script>
+  </body>
+  <style>
+    main {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+    }
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+  <script>
+    document.getElementById("beer").addEventListener("click", function () {
+      checkAlcohol("beer");
+    });
+    document.getElementById("snaps").addEventListener("click", function () {
+      checkAlcohol("snaps");
+    });
+    document.getElementById("cola").addEventListener("click", function () {
+      checkAlcohol("cola");
+    });
+    document.getElementById("fanta").addEventListener("click", function () {
+      checkAlcohol("fanta");
+    });
+
+    // ["beer", "snaps", "cola", "fanta"].forEach(function (beverage) {
+    //   document.getElementById(beverage).addEventListener("click", function () {
+    //     checkAlcohol(beverage);
+    //   });
+    // });
+
+    function checkAlcohol(beverageType) {
+      beverageType = beverageType.toLowerCase();
+
+      if (beverageType === "beer" || beverageType === "snaps") {
+        console.log("Indeholder alkohol");
+      } else {
+        console.log("Alkoholfri");
+      }
+    }
+  </script>
 </html>
