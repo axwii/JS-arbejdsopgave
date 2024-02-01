@@ -7,10 +7,10 @@
   </head>
   <body>
     <main>
-      <img id="snaps" src="img/snaps.webp" alt="snaps" />
-      <img id="fanta" src="img/fanta.webp" alt="fanta" />
-      <img id="cola" src="img/cola.webp" alt="cola" />
-      <img id="beer" src="img/ol.jpeg" alt="øl" />
+      <img src="img/snaps.webp" alt="snaps" />
+      <img src="img/fanta.webp" alt="fanta" />
+      <img src="img/cola.webp" alt="cola" />
+      <img src="img/ol.jpeg" alt="øl" />
     </main>
   </body>
   <style>
@@ -26,29 +26,13 @@
     }
   </style>
   <script>
-    document.getElementById("beer").addEventListener("click", function () {
-      checkAlcohol("beer");
-    });
-    document.getElementById("snaps").addEventListener("click", function () {
-      checkAlcohol("snaps");
-    });
-    document.getElementById("cola").addEventListener("click", function () {
-      checkAlcohol("cola");
-    });
-    document.getElementById("fanta").addEventListener("click", function () {
-      checkAlcohol("fanta");
-    });
-
-    // ["beer", "snaps", "cola", "fanta"].forEach(function (beverage) {
-    //   document.getElementById(beverage).addEventListener("click", function () {
-    //     checkAlcohol(beverage);
-    //   });
-    // });
-
-    function checkAlcohol(beverageType) {
-      beverageType = beverageType.toLowerCase();
-
-      if (beverageType === "beer" || beverageType === "snaps") {
+    document.querySelector("img[alt=øl]").addEventListener("click",tjek)
+    document.querySelector("img[alt=snaps]").addEventListener("click",tjek)
+    document.querySelector("img[alt=cola]").addEventListener("click",tjek)
+    document.querySelector("img[alt=fanta]").addEventListener("click",tjek)
+    
+    function tjek(){
+      if (this.alt === "øl" || this.alt === "snaps") {
         console.log("Indeholder alkohol");
       } else {
         console.log("Alkoholfri");
