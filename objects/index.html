@@ -7,27 +7,91 @@
   </head>
   <body>
     <main>
-      <h1>Mit object</h1>
+      <h1>Bands</h1>
       <p></p>
     </main>
   </body>
   <script>
-    const band = {
-      name: "The Beatles",
-      members: [
-        "John Lennon",
-        "Paul McCartney",
-        "George Harrison",
-        "Ringo Starr",
-      ],
-      genre: "Rock",
-      active: false,
-      formed: 1960,
-    };
-    document.querySelector("p").innerHTML = 
-    `Bandet ${band.name} blev dannet i ${band.formed} 
-    og bestod af ${band.members.length} medlemmer. Bandet spillede 
-    ${band.genre} og er ${band.active ? "aktive" : "ikke aktive"}
-    på nuværende tidspunkt.`;
+    const bands = [
+      {
+        name: "The Beatles",
+        members: [
+          "John Lennon",
+          "Paul McCartney",
+          "George Harrison",
+          "Ringo Starr",
+        ],
+        genre: "Rock",
+        active: false,
+        formed: 1960,
+      },
+      {
+        name: "The Rolling Stones",
+        members: [
+          "Mick Jagger",
+          "Keith Richards",
+          "Ronnie Wood",
+          "Charlie Watts",
+        ],
+        genre: "Rock",
+        active: true,
+        formed: 1962,
+      },
+      {
+        name: "Led Zeppelin",
+        members: [
+          "Robert Plant",
+          "Jimmy Page",
+          "John Paul Jones",
+          "John Bonham",
+        ],
+        genre: "Rock",
+        active: false,
+        formed: 1968,
+      },
+      {
+        name: "Pink Floyd",
+        members: [
+          "David Gilmour",
+          "Roger Waters",
+          "Richard Wright",
+          "Nick Mason",
+        ],
+        genre: "Rock",
+        active: false,
+        formed: 1965,
+      },
+      {
+        name: "Guns N' Roses",
+        members: [
+          "Axl Rose",
+          "Slash",
+          "Duff McKagan",
+          "Dizzy Reed",
+          "Richard Fortus",
+          "Frank Ferrer",
+          "Melissa Reese",
+        ],
+        genre: "Rock",
+        active: true,
+        formed: 1985,
+      }
+    ];
+
+    bands.forEach((band) => {
+      const p = document.createElement("p");
+      p.innerHTML = `Bandet ${band.name} blev dannet i ${band.formed} 
+      og bestod af ${band.members.length} medlemmer. Bandet spillede 
+      ${band.genre} og er ${band.active ? "aktive" : "ikke aktive"}
+      på nuværende tidspunkt.`;
+      document.querySelector("main").appendChild(p);
+    });
+
+    // document.querySelector("p").innerHTML = `Bandet ${
+    //   band.name
+    // } blev dannet i ${band.formed} 
+    // og bestod af ${band.members.length} medlemmer. Bandet spillede 
+    // ${band.genre} og er ${band.active ? "aktive" : "ikke aktive"}
+    // på nuværende tidspunkt.`;
   </script>
 </html>
