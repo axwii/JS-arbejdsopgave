@@ -13,25 +13,24 @@
     </main>
   </body>
   <script>
+    document.getElementById("btn").addEventListener("click",test);
+
+    let number = Math.floor(Math.random() * 11); 
     let nbrOfGuesses = 1;
-    let guessNumber = Math.round(Math.random() * 10) + 1; // Rettet til at generere tal fra 1 til 10
 
-    document.getElementById("btn").addEventListener("click", function () {
-      var tal = parseInt(document.getElementById("tal").value);
-
-      if (tal == guessNumber) {
-        window.alert(
-          `${tal} er rigtigt! Du brugte ${nbrOfGuesses} forsøg. Prøv igen med et nyt tal!`
-        );
-        guessNumber = Math.round(Math.random() * 10) + 1; // Generer et nyt tilfældigt tal
-        nbrOfGuesses = 1; // Nulstil antal gæt
-      } else if (tal > guessNumber) {
-        window.alert("Du har gættet for højt!");
+    function test(){
+      const input = document.getElementById("tal").value;
+      if (input == number) {
+        confirm(`${number} er rigtigt! Du brugte ${nbrOfGuesses} forsøg. Prøv igen med et nyt tal!`);
+        number = Math.floor(Math.random() * 11); 
+        nbrOfGuesses = 1;
+      } else if (input > number) {
+        alert("Du har gættet for højt!");
         nbrOfGuesses++;
-      } else if (tal < guessNumber) {
-        window.alert("Du har gættet for lavt!");
+      } else if (input < number) {
+        alert("Du har gættet for lavt!");
         nbrOfGuesses++;
       }
-    });
+    }
   </script>
 </html>
