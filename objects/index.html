@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+  </head>
+  <body>
+    <main>
+      <h1>Mit object</h1>
+      <p></p>
+    </main>
+  </body>
+  <script>
+    const band = {
+      name: "The Beatles",
+      members: [
+        "John Lennon",
+        "Paul McCartney",
+        "George Harrison",
+        "Ringo Starr",
+      ],
+      genre: "Rock",
+      active: false,
+      formed: 1960,
+    };
+    document.querySelector("p").innerHTML = 
+    `Bandet ${band.name} blev dannet i ${band.formed} 
+    og bestod af ${band.members.length} medlemmer. Bandet spillede 
+    ${band.genre} og er ${band.active ? "aktive" : "ikke aktive"}
+    på nuværende tidspunkt.`;
+  </script>
+</html>
